@@ -1,0 +1,52 @@
+// Navbar
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width:85%;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    background-color: #20201C;
+    display: flex;
+    align-items: center;
+}
+.navbar_block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    margin-right: 30px;
+}
+.button_signUp{
+    background: none;
+    border: none;
+    color: rgb(195, 190, 190);
+    font-size: 16px;
+    height: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.button_signUp:hover{
+    color: #fff;
+    font-size: 17px;
+
+}
+.button_signIn{
+    font-size: 16px;
+    width: 110px;
+    height:45px;
+    cursor: pointer;
+    color: #20201C;
+    background-color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+}
+.button_signIn:hover{
+    font-size: 17px;
+    width: 115px;
+    height: 50px;
+    color:black
+}
