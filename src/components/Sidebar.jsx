@@ -1,9 +1,10 @@
 import React from "react";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo1.svg";
 import home from "../assets/home.svg";
 import book from "../assets/book.svg";
-import search from "../assets/search.svg";
+// import search from "../assets/search.svg";
 import love from "../assets/love.svg";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -11,18 +12,18 @@ const Sidebar = () => {
       <div className="sideBar_block">
         <img className="main_logo" src={logo} alt="Логотип" />
         <ul className="sideBar_routes">
-          <li className="sideBar_routes-list">
-            <img className="sideBar_routes-list_logo" src={home} alt="Main" />
-            Главная
-          </li>
-          <li className="sideBar_routes-list">
-            <img className="sideBar_routes-list_logo" src={search} alt="Main" />
-            Поиск
-          </li>
-          <li className="sideBar_routes-list">
-            <img className="sideBar_routes-list_logo" src={book} alt="Main" />
-            Моя медиатека
-          </li>
+          <Link style={{ textDecoration: "none" }} to="/">
+            <li className="sideBar_routes-list">
+              <img className="sideBar_routes-list_logo" src={home} alt="Main" />
+              Главная
+            </li>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to="/musics">
+            <li className="sideBar_routes-list">
+              <img className="sideBar_routes-list_logo" src={book} alt="Main" />
+              Медиатека
+            </li>
+          </Link>
         </ul>
       </div>
       <div className="sideBar_block-bottom">

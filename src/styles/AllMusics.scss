@@ -1,0 +1,116 @@
+.down_block-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+.down_block {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.down_block-center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.down_block-top {
+  display: flex;
+  align-items: center;
+}
+.down_block-top_vol {
+  width: 30px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.down_block-top_volume {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 3px;
+  background: #fff;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 12px 0px 5px 0px;
+  width: 100px;
+}
+.down_block-top_volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  background-color: #fff !important;
+  cursor: pointer;
+}
+.down_block-bottom {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: #d9d6d6;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 12px 0px 5px 0px;
+  width: 600px;
+  margin: 10px 10px;
+}
+.down_block-bottom::-webkit-slider-thumb {
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  background-color: #cac6c6 !important;
+  cursor: pointer;
+}
+.down_block-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.down_block-span {
+  display: inline-block;
+  color: #b6b2b2;
+  width: 30px;
+}
+
+// player
+.down_block-music {
+  display: flex;
+  width: 400px;
+}
+.down_block-music_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.down_block-music_titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.down_block-music_titles-name {
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+.down_block-music_titles-artist {
+  margin-top: 5px;
+  color: #999797;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+// Playlist
+.down_musics {
+  top: 60px;
+}
