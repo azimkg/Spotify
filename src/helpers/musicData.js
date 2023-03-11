@@ -42,7 +42,8 @@ export const musics = [
         description: "Песня написанная для моей Солнышки.",
         img: photo,
         artist: "Nurmuhammed Jaqyp, Kuat Abylov, Togjan Muratov",
-        audio: samaya,
+        audio:
+          "https://i1.sndcdn.com/artworks-CvUkjedRf8P87xpJ-fy3smA-t500x500.jpg",
         likes: [],
         color1: "rgb(246, 89, 89)",
         color2: "#181818",
