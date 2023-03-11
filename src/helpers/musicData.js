@@ -40,10 +40,9 @@ export const musics = [
         id: 3,
         title: "Самая-самая",
         description: "Песня написанная для моей Солнышки.",
-        img: photo,
+        img: "https://i1.sndcdn.com/artworks-CvUkjedRf8P87xpJ-fy3smA-t500x500.jpg",
         artist: "Nurmuhammed Jaqyp, Kuat Abylov, Togjan Muratov",
-        audio:
-          "https://i1.sndcdn.com/artworks-CvUkjedRf8P87xpJ-fy3smA-t500x500.jpg",
+        audio: samaya,
         likes: [],
         color1: "rgb(246, 89, 89)",
         color2: "#181818",
