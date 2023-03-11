@@ -33,7 +33,7 @@ const PlayList = ({ item, setIsElem, setIsVisible, isEqualizer }) => {
           <p className="playList_block-artist">{item.artist}</p>
         </div>
       </div>
-      <div className="playList_block1">
+      <div className="flex">
         <img src={like} alt="svg" className="playList_block-svg" />
         <img src={info} alt="info" className="playList_block-svg" />
       </div>
