@@ -1,33 +1,40 @@
 import React, { useEffect, useRef, useState } from "react";
-import play from "../../assets/play.svg";
-import pause from "../../assets/pause.svg";
-import next from "../../assets/next.svg";
-import prev from "../../assets/prev.svg";
-import volumes from "../../assets/volume.svg";
+import AboutMusic from "./AudiotagButtons/AboutMusic";
+import Muted from "./AudiotagButtons/Muted";
+import PlayOrPauseButtons from "./AudiotagButtons/PlayOrPauseButtons";
 
-const AllMusics = ({ item, isElem }) => {
+const AllMusics = ({ item, isElem, setIsEqualizer, setIsElem, itemLength }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
   const [volume, setVolume] = useState(1);
   const audioRef = useRef(null);
   const [duration, setDuration] = useState("");
   const [allTime, setAllTime] = useState("");
+  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
     audioRef.current?.play();
+    setIsEqualizer(isElem);
   }, [isElem]);
 
   const togglePlay = () => {
     if (isPlaying) {
       audioRef.current.pause();
+      setIsEqualizer("");
     } else {
       audioRef.current.play();
+      setIsEqualizer(isElem);
     }
   };
 
   const handleEnded = () => {
     setIsPlaying(false);
     setProgress(0);
+    setIsEqualizer("");
+    if (isElem === itemLength) {
+      return;
+    }
+    setIsElem(isElem + 1);
   };
 
   function getTimeFromMins1(mins) {
@@ -74,67 +81,27 @@ const AllMusics = ({ item, isElem }) => {
             onPause={() => setIsPlaying(false)}
             onEnded={handleEnded}
             onTimeUpdate={handleTimeUpdate}
+            muted={isMuted}
           />
           <div className="down_block-main">
-            <div className="down_block-music">
-              <img
-                src={item.img}
-                className="down_block-music_img"
-                alt="image"
-              />
-              <div className="down_block-music_titles">
-                <h4 className="down_block-music_titles-name">{item.title}</h4>
-                <p className="down_block-music_titles-artist">{item.artist}</p>
-              </div>
-            </div>
-            <div className="down_block-center">
-              <div className="down_block-top">
-                <img src={prev} alt="prevAudio" width={28} />
-                {isPlaying ? (
-                  <img
-                    src={pause}
-                    onClick={togglePlay}
-                    alt="play"
-                    style={{ margin: "5px 20px" }}
-                    width={30}
-                  />
-                ) : (
-                  <img
-                    src={play}
-                    onClick={togglePlay}
-                    style={{ margin: "5px 20px" }}
-                    alt="pause"
-                    width={30}
-                  />
-                )}
-                <img src={next} alt="nextAudio" width={32} />
-              </div>
-              <div className="down_block-1">
-                <span className="down_block-span">{allTime}</span>
-                <input
-                  type="range"
-                  min={0}
-                  step="any"
-                  value={progress}
-                  className="down_block-bottom"
-                  max={1}
-                  onChange={handleEnded}
-                />
-                <span className="down_block-span">{duration}</span>
-              </div>
-            </div>
-            <div style={{ display: "flex" }}>
-              <img className="down_block-top_vol" src={volumes} alt="volume" />
-              <input
-                className="down_block-top_volume"
-                type="range"
-                min={0}
-                max={1}
-                step="any"
-                value={volume}
-                onChange={handleVolumeChange}
-              />
-            </div>
+            <AboutMusic item={item} />
+            <PlayOrPauseButtons
+              togglePlay={togglePlay}
+              allTime={allTime}
+              duration={duration}
+              progress={progress}
+              handleEnded={handleEnded}
+              isPlaying={isPlaying}
+              setIsElem={setIsElem}
+              isElem={isElem}
+              itemLength={itemLength}
+            />
+            <Muted
+              isMuted={isMuted}
+              setIsMuted={setIsMuted}
+              volume={volume}
+              handleVolumeChange={handleVolumeChange}
+            />
           </div>
         </div>
       ) : null}

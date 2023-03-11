@@ -26,12 +26,11 @@ const PlayListAuthor = ({ item, isElem }) => {
             {item.likes.length < 0 ? (
               <span className="play_listAuthor-block_text">
                 <img className="playList_block-svg" src={like} alt="like" />
-                Лайк: {item.likes.length}
+                {item.likes.length}
               </span>
             ) : (
               <span className="play_listAuthor-block_text">
                 <img className="playList_block-svg" src={like} alt="like" />
-                Лайк: 0
               </span>
             )}
           </div>

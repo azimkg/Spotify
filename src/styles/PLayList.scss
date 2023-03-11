@@ -30,6 +30,13 @@
   margin-left: 20px;
   cursor: pointer;
 }
+.playList_block-num {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #d0cbcb;
+  margin-right: 10px;
+}
 .playList_block-title {
   font-size: 14px;
   font-weight: 500;
@@ -42,4 +49,36 @@
   letter-spacing: 0.5px;
   margin-top: 5px;
   color: #999797;
+}
+// bar equalizer
+$bars: 20;
+
+.container_bar {
+  width: 50px;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+.bar {
+  width: 5px;
+  min-height: 2px;
+  margin-right: 1px;
+  box-shadow: 0 10px 15px #000;
+}
+
+$multiplier: 100 / $bars;
+@for $i from 0 through $bars {
+  .bar:nth-child(#{$i}) {
+    $saturation: 100 - (($i + 1) * $multiplier);
+    background-color: hsla(0, $saturation, 50%, 1);
+    animation: grow#{$i} #{random(700) + 1500}ms alternate infinite;
+  }
+
+  @keyframes grow#{$i} {
+    @for $j from 0 through 10 {
+      #{$j * 10}% {
+        height: #{random(20)}px;
+      }
+    }
+  }
 }

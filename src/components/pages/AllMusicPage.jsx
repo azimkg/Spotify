@@ -6,6 +6,7 @@ import PlayList from "../playList/PlayList";
 
 const AllMusicPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isEqualizer, setIsEqualizer] = useState("");
   const [isElem, setIsElem] = useState("");
   console.log(isElem);
   return (
@@ -17,21 +18,31 @@ const AllMusicPage = () => {
             ))
           )
         : null}
-      {musics?.map((item) =>
-        item.data?.map((elem) => (
-          <PlayList
-            key={item.id}
-            item={elem}
-            setIsElem={setIsElem}
-            setIsVisible={setIsVisible}
-          />
-        ))
-      )}
+      <div className="down_Playmusics">
+        {musics?.map((item) =>
+          item.data?.map((elem) => (
+            <PlayList
+              key={item.id}
+              item={elem}
+              setIsElem={setIsElem}
+              setIsVisible={setIsVisible}
+              isEqualizer={isEqualizer}
+            />
+          ))
+        )}
+      </div>
       <div className="down_musics">
         {isVisible
           ? musics?.map((item) =>
               item.data?.map((elem) => (
-                <AllMusics key={item.id} item={elem} isElem={isElem} />
+                <AllMusics
+                  setIsEqualizer={setIsEqualizer}
+                  key={item.id}
+                  item={elem}
+                  isElem={isElem}
+                  setIsElem={setIsElem}
+                  itemLength={item.data.length}
+                />
               ))
             )
           : null}

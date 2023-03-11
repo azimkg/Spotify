@@ -2,6 +2,8 @@ import poet from "../assets/Poet.mp3";
 import durak from "../assets/durak.mp3";
 import samaya from "../assets/samaya.mp3";
 import photo from "../assets/moya.jpg";
+import samka from "../assets/samka.mp3";
+import sagynganda from "../assets/Sagynganda.mp3";
 
 export const musics = [
   {
@@ -43,6 +45,30 @@ export const musics = [
         audio: samaya,
         likes: [],
         color1: "rgb(246, 89, 89)",
+        color2: "#181818",
+      },
+      {
+        id: 4,
+        title: "Moneyken Love",
+        description:
+          "Российская поп-певица и рэп-исполнительница, тиктокер; ранее — инстаблогер",
+        img: "https://i1.sndcdn.com/artworks-CvUkjedRf8P87xpJ-fy3smA-t500x500.jpg",
+        artist: "INSTASAMKA",
+        audio: samka,
+        likes: [],
+        color1: "rgb(241, 126, 84)",
+        color2: "#181818",
+      },
+      {
+        id: 5,
+        title: "Сагынганда",
+        description:
+          "Скучать по кому-то, по чему-то (болезненно чувствовать отсутствие кого-то/чего-то, томительно желать видеть кого-чего-н., быть вместе с кем-н.",
+        img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/i-miss-you-quotes-missing-you-1661469844.jpeg?crop=0.668xw:1.00xh;0.0833xw,0&resize=640:*",
+        artist: "Нурила (Remix)",
+        audio: sagynganda,
+        likes: [],
+        color1: "rgb(227, 223, 92)",
         color2: "#181818",
       },
     ],

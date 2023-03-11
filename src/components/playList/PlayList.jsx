@@ -2,7 +2,7 @@ import React from "react";
 import info from "../../assets/info.svg";
 import like from "../../assets/favorite.svg";
 
-const PlayList = ({ item, setIsElem, setIsVisible }) => {
+const PlayList = ({ item, setIsElem, setIsVisible, isEqualizer }) => {
   return (
     <div className="playList_block" style={{ background: `${item.color2}` }}>
       <div
@@ -12,6 +12,21 @@ const PlayList = ({ item, setIsElem, setIsVisible }) => {
           setIsVisible(true);
         }}
       >
+        <h2 className="playList_block-num">{item.id}</h2>
+        {isEqualizer === item.id ? (
+          <div class="container_bar">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        ) : null}
+
         <img src={item.img} alt="image" className="playList_block-img" />
         <div className="playList_block-div">
           <h4 className="playList_block-title">{item.title}</h4>
