@@ -11,11 +11,19 @@ const AllMusics = ({ item, isElem, setIsEqualizer, setIsElem, itemLength }) => {
   const [duration, setDuration] = useState("");
   const [allTime, setAllTime] = useState("");
   const [isMuted, setIsMuted] = useState(false);
+  // const [currentTime, setCurrentTime] = useState(0);
 
   useEffect(() => {
     audioRef.current?.play();
     setIsEqualizer(isElem);
   }, [isElem]);
+
+  const handleTimeUpdate = (e) => {
+    const { current } = audioRef;
+    getTimeFromMins2(current.currentTime);
+    getTimeFromMins1(current.duration);
+    setProgress(current.currentTime / current.duration);
+  };
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -48,14 +56,6 @@ const AllMusics = ({ item, isElem, setIsEqualizer, setIsElem, itemLength }) => {
     let minutes = Math.round(mins % 60);
     return setAllTime(hours + ":" + minutes);
   }
-
-  const handleTimeUpdate = () => {
-    const { current } = audioRef;
-    getTimeFromMins2(current.currentTime);
-    getTimeFromMins1(current.duration);
-
-    setProgress(current.currentTime / current.duration);
-  };
 
   const handleVolumeChange = (event) => {
     const {

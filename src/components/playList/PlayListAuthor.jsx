@@ -2,7 +2,6 @@ import React from "react";
 import like from "../../assets/likes.svg";
 
 const PlayListAuthor = ({ item, isElem }) => {
-  console.log(item);
   return (
     <>
       {isElem === item.id ? (
@@ -25,12 +24,12 @@ const PlayListAuthor = ({ item, isElem }) => {
             </p>
             {item.likes.length < 0 ? (
               <span className="play_listAuthor-block_text">
-                <img className="playList_block-svg" src={like} alt="like" />
+                <img className="playList_block-svgLike" src={like} alt="like" />
                 {item.likes.length}
               </span>
             ) : (
               <span className="play_listAuthor-block_text">
-                <img className="playList_block-svg" src={like} alt="like" />
+                <img className="playList_block-svgLike" src={like} alt="like" />
               </span>
             )}
           </div>

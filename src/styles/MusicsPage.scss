@@ -43,7 +43,46 @@
 .grey {
   color: #acb8be;
 }
+.playList_block-svgLike {
+  width: 30px;
+  cursor: pointer;
+  margin: 0 10px;
+}
 
 .down_Playmusics {
   padding-bottom: 70px;
+}
+@media (max-width: 426px) {
+  .musics_page {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    background-color: #181818;
+    height: 100vh;
+    z-index: 0;
+  }
+  .down_Playmusics {
+    padding-bottom: 80px;
+  }
+  .play_listAuthor-block {
+    padding: 15px 10px 15px 15px;
+  }
+  .play_listAuthor-block_right {
+    margin-left: 15px;
+  }
+  .play_listAuthor-block_img {
+    width: 150px;
+  }
+  .play_listAuthor-block_title {
+    font-size: 24px;
+  }
+  .play_listAuthor-block_text {
+    font-size: 14px;
+  }
+
+  .playList_block-svgLike {
+    width: 20px;
+  }
 }

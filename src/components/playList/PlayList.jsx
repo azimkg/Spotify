@@ -3,6 +3,8 @@ import info from "../../assets/info.svg";
 import like from "../../assets/favorite.svg";
 
 const PlayList = ({ item, setIsElem, setIsVisible, isEqualizer }) => {
+  let array = item.artist.split("");
+  let artist = array.slice(0, 17).join("");
   return (
     <div className="playList_block" style={{ background: `${item.color2}` }}>
       <div
@@ -31,6 +33,7 @@ const PlayList = ({ item, setIsElem, setIsVisible, isEqualizer }) => {
         <div className="playList_block-div">
           <h4 className="playList_block-title">{item.title}</h4>
           <p className="playList_block-artist">{item.artist}</p>
+          <p className="playList_block-artist-mobile">{artist}</p>
         </div>
       </div>
       <div className="flex">

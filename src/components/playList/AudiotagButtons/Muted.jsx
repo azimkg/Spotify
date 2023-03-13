@@ -9,7 +9,7 @@ const Muted = ({ isMuted, setIsMuted, handleVolumeChange, volume }) => {
   return (
     <>
       {isMuted ? (
-        <div style={{ display: "flex" }}>
+        <div className="down_block_div">
           <img
             className="down_block-top_vol"
             onClick={hadndleVolomeMut}
@@ -27,7 +27,7 @@ const Muted = ({ isMuted, setIsMuted, handleVolumeChange, volume }) => {
           />
         </div>
       ) : (
-        <div style={{ display: "flex" }}>
+        <div className="down_block_div">
           <img
             className="down_block-top_vol"
             onClick={hadndleVolomeMut}

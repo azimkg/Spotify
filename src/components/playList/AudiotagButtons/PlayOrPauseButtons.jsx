@@ -27,6 +27,7 @@ const PlayOrPauseButtons = ({
     }
     setIsElem(isElem + 1);
   };
+
   return (
     <>
       <div className="down_block-center">

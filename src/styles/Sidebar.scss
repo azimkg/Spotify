@@ -34,7 +34,7 @@
   align-items: center;
 }
 .active {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 20px;
   cursor: pointer;
   color: rgb(240, 235, 235);
@@ -55,4 +55,34 @@
 }
 .sideBar_block-bottom:hover {
   color: #fff;
+}
+
+//! burger menu
+
+@media (max-width: 426px) {
+  .sideBar {
+    display: none;
+  }
+  .burger_menu {
+    background: #060606;
+    width: 60%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 101;
+  }
+  .burger_logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main_logo {
+    width: 120px !important;
+  }
+  .sideBar_block-bottom {
+    margin-bottom: 100px;
+  }
 }
